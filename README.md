@@ -130,7 +130,7 @@ After completing the analysis, I obtained the following key insights:
 •	Leverage Insights from Top-Performing Call Centers: Identify best practices from high-performing call centers with superior CSAT scores and efficiency. Standardize these practices across all centers.
 
 
-# Challenges faced & lessons learned:
+# Challenges faced :
 
 • The data contained some missing values and inconsistencies, which required careful cleaning and handling to avoid skewing the results.
 
