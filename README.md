@@ -1,5 +1,5 @@
 # Call-Centre-Data-Analysis
-This project involves analyzing call center data as part of a [visualization challenge](https://www.linkedin.com/posts/datafrenchy-academy_the-next-datafrenchy-academy-data-challenge-activity) posted by [DataFrenchy](https://www.datafrenchy.com/).
+This project involves analyzing call center data as part of a [visualization challenge](https://www.linkedin.com/posts/datafrenchy-academy_the-next-datafrenchy-academy-data-challenge-activity-7239334302306512896-Mycx?utm_source=share&utm_medium=member_desktop) posted by [DataFrenchy](https://www.datafrenchy.com/).
 
 # Problem Statement:
 In this analysis, I aim to answer critical questions related to customer satisfaction (CSAT) within a call center context. The data provided key insights into how various factors, such as call center performance, response time, feedback type, and issue categories affect customer experience. Customer satisfaction plays a vital role in the success of any business. Understanding the factors influencing customer feedback can help improve operational efficiency and customer experience.The findings will guide targeted interventions to enhance service quality and customer experience
