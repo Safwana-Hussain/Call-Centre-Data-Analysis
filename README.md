@@ -1,14 +1,17 @@
 # Call-Centre-Data-Analysis
 This project involves analyzing call center data as part of a [visualization challenge](https://www.linkedin.com/posts/datafrenchy-academy_the-next-datafrenchy-academy-data-challenge-activity)posted by [DataFrenchy](https://www.datafrenchy.com/).
+
 🔗	Problem Statement:
 In this analysis, I aim to answer critical questions related to customer satisfaction (CSAT) within a call center context. The data provided key insights into how various factors, such as call center performance, response time, feedback type, and issue categories affect customer experience. Customer satisfaction plays a vital role in the success of any business. Understanding the factors influencing customer feedback can help improve operational efficiency and customer experience.The findings will guide targeted interventions to enhance service quality and customer experience
 
- 🔗Key Questions:
+
+ 🔗    Key Questions:
 •	How do customer satisfaction scores differ by call center, response time, or feedback type?
 •	Which states or cities experience the most billing or service outage issues?
 •	Are there significant differences in customer satisfaction or call duration between the call center and chatbot channels?
-•	Which call center performs the best in terms of CSAT scores, call duration, and feedback?
+•	Which call center performs the best in terms of CSAT scores, call duration?
 •	What is the distribution of feedback (e.g., Very Positive, Neutral, Negative) across different call centers or cities?
+
 
 🔗	Requirement Gathering: 
 Dataset & Tools:
@@ -21,181 +24,76 @@ For this analysis, I utilized the following tools:
 I started by importing the raw data and loading it into the database. Ensuring the data was correctly loaded allowed me to execute queries to assess the dataset.
 
 Data Cleaning:
-•	Column Names: I standardized column names, such as renaming the "call duration in minutes" column for clarity.
+• Column Names: I standardized column names, such as renaming the "call duration in minutes" column for clarity.
+
 ![image](https://github.com/user-attachments/assets/c2721a59-36d8-4ff5-a899-47aba8d574f9)
 
 
-EXEC sp_rename 'call_center_data.[call duration in minutes]', 'call_duration_in_minutes', 'COLUMN';
+• Data Types: Using INFORMATION_SCHEMA_COLUMNS,  I reviewed the data types of each column and converted them where necessary.
 
-•	Data Types: Using INFORMATION_SCHEMA_COLUMNS, I identified that all columns were stored as varchar. I then converted csat_score and call_duration to integers and changed call_timestamp to datetime using ALTER TABLE commands.
---Checking data type 
-SELECT column_name, DATA_TYPE
-FROM INFORMATION_SCHEMA.COLUMNS
-WHERE TABLE_NAME = 'call_center_data'
---We can see all dataa types are varchar here and we need to convert the data as needed
-
---Convert the data type
-
-ALTER TABLE call_center_data
-ALTER COLUMN csat_score integer
-
-ALTER TABLE call_center_data
-ALTER COLUMN call_timestamp Datetime
-
-ALTER TABLE call_center_data
-ALTER COLUMN call_duration_in_minutes Integer
+![image](https://github.com/user-attachments/assets/a8892f86-a080-4ebe-a3ca-b2c4b2bd627a)
 
 
+• Missing Values: I examined the data for missing values. Notably, the csat_score column had 20,670 missing entries, which I decided to impute with the average score based on the feedback type. I used a WITH clause to calculate and update the missing values.
 
-•	Missing Values: I examined the data for missing values. Notably, the csat_score column had 20,670 missing entries, which I decided to impute with the average score based on the feedback type. I used a WITH clause to calculate and update the missing values.
-SELECT AVG(csat_score) AS avg_csat_score, feedback --Find out the average of csat_score for each feedback 
-FROM call_center_data
-where csat_score is not NULL
-group by feedback
-order by avg_csat_score desc;
+![image](https://github.com/user-attachments/assets/f887d795-7330-4286-8d22-176a8f58f13e)
+![image](https://github.com/user-attachments/assets/ddf60739-605c-42a0-a885-0d17fe9480ee)
 
---Impute the average csat_score using with claus and updated the missing csat score according to that
+I used the `WITH` clause to calculate the average CSAT score and updated the missing CSAT values accordingly.
 
-WITH avg_scores AS (
-    SELECT feedback, AVG(csat_score) AS avg_csat_score
-    FROM call_center_data
-    WHERE csat_score IS NOT NULL
-    GROUP BY feedback)
+![image](https://github.com/user-attachments/assets/6c1f731c-5303-48f5-9873-9c3a80a12216)
 
-UPDATE call_center_data
-SET csat_score = (
-    SELECT avg_csat_score 
-    FROM avg_scores 
-    WHERE call_center_data.feedback = avg_scores.feedback)
-WHERE csat_score IS NULL 
 
-select * from call_center_data -- checking if the table/column has been updated
+• Outliers: I examined the CSAT scores for outliers. Based on the standard deviation method, I confirmed that no significant outliers existed.
 
-•	Outliers: I examined the CSAT scores for outliers. Based on the standard deviation method, I confirmed that no significant outliers existed.
-SELECT count(*) as detecting_outliers
-from call_center_data
-where csat_score > (Select Avg(csat_score) + (3 * STDEV(csat_score)) from call_Center_Data) 
---There are no outliers above the threshold 
---By looking at the average we know that data is symmetrically distributed
+![image](https://github.com/user-attachments/assets/28662dd0-2158-4ac5-bc1f-c7fbfdf1a8a4)
 
-	Data Analysis
-With clean data in hand, I moved on to answering the key questions:
-•	CSAT Scores by Call Center and Feedback Type:
-I used GROUP BY and ORDER BY SQL queries to calculate the average CSAT score for each call center and feedback type.
---customer satisfaction scores differ by call center
-Select call_center, count(call_center), sum(csat_score) AS  count_csat_score
-from Call_Center_Data
-group by call_center 
-order by count_csat_score desc
 
-----customer satisfaction scores differ by response time
-Select response_time, count(csat_score) AS  count_csat_score
-from Call_Center_Data
-group by response_time
-order by count_csat_score desc
+🔗	Data Analysis
+With clean data in hand, I moved on with the analysis.
 
-----customer satisfaction scores differ by feedback
+• How do customer satisfaction scores differ by call center, response time, or feedback type?
 
-Select feedback, avg(csat_score) AS  avg_csat_score
-from Call_Center_Data
-group by feedback
-order by avg_csat_score desc
-•	Billing and Service Outage Issues by City and State:
+I used GROUP BY and ORDER BY  to calculate the average CSAT score for each call center and feedback type.
+
+![image](https://github.com/user-attachments/assets/79a0e530-5c4c-477a-ac7b-0e736a915817)
+
+•   Which states or cities experience the most billing or service outage issues?	
 Using SQL, I grouped the data by state and city to identify locations with the highest number of billing questions and service outage issues. This was accomplished with simple COUNT and GROUP BY operations.
--- Which cities experience most billing question
-Select  top 5 city, reason , count(*) as reason_count 
-from call_center_data
-where reason in ( 'Billing Question')
-group by city,reason
-order by reason_count desc 
+
+![image](https://github.com/user-attachments/assets/7e7f732b-a230-464a-9c46-25af4c5b8453)
 
 
--- Which cities experience most service outage  question
-Select  top 5 city, reason , count(*) as reason_count 
-from call_center_data
-where reason in ( 'Service Outage')
-group by city,reason
-order by reason_count desc 
+•  Are there significant differences in customer satisfaction or call duration between the call center and chatbot channels?									
 
-
--- Which states experience most billing question
-
-Select  TOP 5 state , reason , count(*) as reason_count 
-from call_center_data
-where reason in ( 'Billing Question')
-group by reason, state 
-order by reason_count desc
-
-
--- Which states experience most service outage issue 
-Select  TOP 5 state , reason , count(*) as reason_count 
-from call_center_data
-where reason in ( 'Service outage')
-group by reason, state 
-order by reason_count desc
-
-•	Differences Between Call Center and Chatbot Channels:
 I ran queries comparing customer satisfaction and call duration between the two channels, identifying any significant differences in service quality.
 
--- satisfaction
+![image](https://github.com/user-attachments/assets/20176f4b-502f-4a13-ac06-cc66c3e68dcf)
 
-Select channel , sum(csat_score) as sum_csat_score 
-from call_center_data
-where channel in('Call-Center' , 'Chatbot')
-group by channel
-order by sum_csat_Score desc
 
---Call_center  > chatbot
-
---Call duration
-
-Select channel , sum(call_duration_in_minutes) as sum_call_duration
-from call_center_data
-where channel in('Call-Center','Chatbot')
-group by channel
-order by sum_call_duration desc
-
-•	Performance of Call Centers:
+•  Which call center performs the best in terms of CSAT scores, call duration?	
 I grouped data by call center to assess the total number of feedback entries, average call duration, and CSAT scores, helping identify top-performing call centers.
---in terms of satisfaction_score					
-SELECT call_center,  count(csat_score) as count_csat_score
-from Call_Center_Data
-group by call_center
-order by count_csat_score desc
 
---los angeles> baltimore > chicago > denver
+![image](https://github.com/user-attachments/assets/e4b052a6-76d2-4756-9fd5-08e6d752559d)
 
-SELECT call_center,   avg (call_duration_in_minutes) as avg_call_duration 
-from Call_Center_Data
-group by call_center
-order by avg_call_duration desc
-
-•	Feedback Distribution Across Call Centers and Cities:
+•  What is the distribution of feedback (e.g., Very Positive, Neutral, Negative) across different call centers or cities?	
 I examined the distribution of feedback types (e.g., Very Positive, Neutral, Negative) for both cities and call centers. This was done using COUNT and GROUP BY queries to give a clear picture of customer sentiment across different regions and centers.
---For City
-SELECT top 10 CITY,
-    count(CASE WHEN FEEDBACK = 'VERY POSITIVE' THEN 1  END) AS Very_Positive,
-    count(CASE WHEN FEEDBACK = 'POSITIVE' THEN 1 END) AS Positive,
-    count(CASE WHEN FEEDBACK = 'NEGATIVE' THEN 1  END) AS Negative,
-	count(CASE WHEN FEEDBACK = 'VERY Negative' THEN 1 END) AS Very_Negative,
-	count(CASE WHEN FEEDBACK = 'Neutral' THEN 1  END) AS Neutral
-FROM  call_center_data
-GROUP BY CITY
-ORDER BY  CITY ;
+
+
 
 
 --For call_centers
 
 
-SELECT call_center,
+    SELECT call_center,
     Count(CASE WHEN FEEDBACK = 'VERY POSITIVE' THEN 1  END) AS Very_Positive,
     Count(CASE WHEN FEEDBACK = 'POSITIVE' THEN 1  END) AS Positive,
     COUNT(CASE WHEN FEEDBACK = 'NEGATIVE' THEN 1 END) AS Negative, 
-	Count(CASE WHEN FEEDBACK = 'VERY Negative' THEN 1 END) AS Very_Negative,
-	Count(CASE WHEN FEEDBACK = 'Neutral' THEN 1 END) AS Neutral
-FROM  call_center_data
-GROUP BY call_center
-ORDER BY  call_center ;
+    Count(CASE WHEN FEEDBACK = 'VERY Negative' THEN 1 END) AS Very_Negative,
+    Count(CASE WHEN FEEDBACK = 'Neutral' THEN 1 END) AS Neutral
+    FROM  call_center_data
+    GROUP BY call_center
+    ORDER BY  call_center ;
 
 Visualization:
 Power BI Dashboard
