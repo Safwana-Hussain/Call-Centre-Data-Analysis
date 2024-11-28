@@ -47,7 +47,6 @@ Data Cleaning:
 • Missing Values: I examined the data for missing values. Notably, the csat_score column had 20,670 missing entries, which I decided to impute with the average score based on the feedback type. I used a WITH clause to calculate and update the missing values.
 
 ![image](https://github.com/user-attachments/assets/d1da401a-1953-4dcd-ba13-af02331453eb)
-![image](https://github.com/user-attachments/assets/39addfb1-2feb-4132-a7a9-d091c30435bb)
 
 I used the `WITH` clause to calculate the average CSAT score and updated the missing CSAT values accordingly.
 
