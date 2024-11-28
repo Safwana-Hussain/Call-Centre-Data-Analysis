@@ -54,33 +54,36 @@ With clean data in hand, I moved on with the analysis.
 
 • How do customer satisfaction scores differ by call center, response time, or feedback type?
 
-I used GROUP BY and ORDER BY  to calculate the average CSAT score for each call center and feedback type.
+=> I used GROUP BY and ORDER BY  to calculate the average CSAT score for each call center and feedback type.
 
 ![image](https://github.com/user-attachments/assets/37bb65a7-05e6-4c2a-8800-d249908aa8c5)
 
 
 •   Which states or cities experience the most billing or service outage issues?	
-Using SQL, I grouped the data by state and city to identify locations with the highest number of billing questions and service outage issues. This was accomplished with simple COUNT and GROUP BY operations.
+
+=> Using SQL, I grouped the data by state and city to identify locations with the highest number of billing questions and service outage issues. This was accomplished with simple COUNT and GROUP BY operations.
 
 ![image](https://github.com/user-attachments/assets/8e9ccb86-9668-4abf-ad99-ef4ee2e8cccb)
 
 
 •  Are there significant differences in customer satisfaction or call duration between the call center and chatbot channels?									
 
-I ran queries comparing customer satisfaction and call duration between the two channels, identifying any significant differences in service quality.
+=> I ran queries comparing customer satisfaction and call duration between the two channels, identifying any significant differences in service quality.
 
 
 ![image](https://github.com/user-attachments/assets/209b1649-57de-40ab-9e24-60b692b10457)
 
 
 •  Which call center performs the best in terms of CSAT scores, call duration?	
-I grouped data by call center to assess the total number of feedback entries, average call duration, and CSAT scores, helping identify top-performing call centers.
+
+=> I grouped data by call center to assess the total number of feedback entries, average call duration, and CSAT scores, helping identify top-performing call centers.
 
 ![image](https://github.com/user-attachments/assets/94a62a5e-6401-463e-a42c-1d9533954095)
 
 
 •  What is the distribution of feedback (e.g., Very Positive, Neutral, Negative) across different call centers or cities?	
-I examined the distribution of feedback types (e.g., Very Positive, Neutral, Negative) for both cities and call centers. This was done using COUNT and GROUP BY queries to give a clear picture of customer sentiment across different regions and centers.
+
+=> I examined the distribution of feedback types (e.g., Very Positive, Neutral, Negative) for both cities and call centers. This was done using COUNT and GROUP BY queries to give a clear picture of customer sentiment across different regions and centers.
 
 ![image](https://github.com/user-attachments/assets/51b2aef4-e189-458b-af1d-2fdd2aef4de3)
 
