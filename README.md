@@ -98,8 +98,10 @@ To communicate the insights effectively, I created a Power BI dashboard with the
 3.	Bar chart : Billing and Outage Issue by City . Compares the volume of billing and service outage issues across different cities.
 4.	Bar chart : Customer Satisfaction by Call Center. Shows average CSAT scores for each call center, providing a clear view of performance.
 5.	Bar chart : Billing and Outage Issue by State. Displays the distribution of billing and service outage issues across different states.
+   
 
-![image](https://github.com/user-attachments/assets/d035582b-7875-423e-ad0c-510ddb97ba43)
+![image](https://github.com/user-attachments/assets/8f4df8fd-e052-4f34-a9c7-76bde81bdedf)
+
 
 
 # Insights:
