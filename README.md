@@ -7,9 +7,13 @@ In this analysis, I aim to answer critical questions related to customer satisfa
 
 # Key Questions:
 •	How do customer satisfaction scores differ by call center, response time, or feedback type?
+
 •	Which states or cities experience the most billing or service outage issues?
+
 •	Are there significant differences in customer satisfaction or call duration between the call center and chatbot channels?
+
 •	Which call center performs the best in terms of CSAT scores, call duration?
+
 •	What is the distribution of feedback (e.g., Very Positive, Neutral, Negative) across different call centers or cities?
 
 
