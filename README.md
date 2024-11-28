@@ -19,9 +19,11 @@ In this analysis, I aim to answer critical questions related to customer satisfa
 
 # Requirement Gathering: 
 
-Dataset & Tools:
+Data Overview:
 
 The dataset used for this analysis consists of 12 columns and 32,941 rows, providing a comprehensive view of call center interactions, customer feedback, and service performance. 
+
+Tools Used:
 
 For this analysis, I utilized the following tools:
 
