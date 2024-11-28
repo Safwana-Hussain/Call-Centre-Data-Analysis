@@ -18,10 +18,15 @@ In this analysis, I aim to answer critical questions related to customer satisfa
 
 
 # Requirement Gathering: 
+
 Dataset & Tools:
+
 The dataset used for this analysis consists of 12 columns and 32,941 rows, providing a comprehensive view of call center interactions, customer feedback, and service performance. 
+
 For this analysis, I utilized the following tools:
+
 •	SQL: To import, clean, and query the data. SQL was pivotal for transforming the data, checking for missing values, handling outliers, and calculating key metrics like average CSAT scores and call duration.
+
 •	Power BI: To visualize the results. I created a dashboard to help easily communicate insights, including slicers and various visualizations like bar charts, line graphs, and pie charts.
 
 # Data Cleaning & Preprocessing:
