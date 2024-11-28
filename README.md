@@ -108,11 +108,16 @@ After completing the analysis, I obtained the following key insights:
 
 # Recommendation:
 •	Improve Low-Performing Call Centers: Focus on the call centers with consistently lower customer satisfaction (CSAT) scores. Conduct root cause analyses to identify gaps in performance.
+
 •	Address Issues in Problematic Regions: Introduce localized support initiatives, such as dedicated teams or additional resources, to address specific regional challenges more efficiently.
+
 •	Enhance Chatbot Performance: Analyze the gaps in chatbot performance compared to call centers.
+
 •	Leverage Insights from Top-Performing Call Centers: Identify best practices from high-performing call centers with superior CSAT scores and efficiency. Standardize these practices across all centers.
 
 
 # Challenges faced & lessons learned:
+
 • The data contained some missing values and inconsistencies, which required careful cleaning and handling to avoid skewing the results.
+
 • Determining the right approach for identifying and handling outliers was challenging, especially given that the dataset had a wide spread of values.
