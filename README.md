@@ -92,11 +92,15 @@ With clean data in hand, I moved on with the analysis.
 
 To communicate the insights effectively, I created a Power BI dashboard with the following visualizations. The dashboard includes two slicers for dynamic filtering, allowing users to focus on specific cities, states, or feedback types.
 
+
 1.	Table chart : Distribution of Call Center Based on Feedback . It displays feedback distribution (e.g., Very Positive, Positive, Neutral, Negative) for each call center.
 2.	Pie chart : Call Center Performance by Call Duration within SLA. Visualizes the proportion of call centers meeting SLA (Service Level Agreement) criteria based on call duration.
 3.	Bar chart : Billing and Outage Issue by City . Compares the volume of billing and service outage issues across different cities.
 4.	Bar chart : Customer Satisfaction by Call Center. Shows average CSAT scores for each call center, providing a clear view of performance.
 5.	Bar chart : Billing and Outage Issue by State. Displays the distribution of billing and service outage issues across different states.
+
+![image](https://github.com/user-attachments/assets/d035582b-7875-423e-ad0c-510ddb97ba43)
+
 
 # Insights:
 After completing the analysis, I obtained the following key insights:
