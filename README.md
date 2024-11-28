@@ -1,11 +1,11 @@
 # Call-Centre-Data-Analysis
 This project involves analyzing call center data as part of a [visualization challenge](https://www.linkedin.com/posts/datafrenchy-academy_the-next-datafrenchy-academy-data-challenge-activity)posted by [DataFrenchy](https://www.datafrenchy.com/).
 
-🔗	Problem Statement:
+# Problem Statement:
 In this analysis, I aim to answer critical questions related to customer satisfaction (CSAT) within a call center context. The data provided key insights into how various factors, such as call center performance, response time, feedback type, and issue categories affect customer experience. Customer satisfaction plays a vital role in the success of any business. Understanding the factors influencing customer feedback can help improve operational efficiency and customer experience.The findings will guide targeted interventions to enhance service quality and customer experience
 
 
- 🔗    Key Questions:
+# Key Questions:
 •	How do customer satisfaction scores differ by call center, response time, or feedback type?
 •	Which states or cities experience the most billing or service outage issues?
 •	Are there significant differences in customer satisfaction or call duration between the call center and chatbot channels?
@@ -13,14 +13,14 @@ In this analysis, I aim to answer critical questions related to customer satisfa
 •	What is the distribution of feedback (e.g., Very Positive, Neutral, Negative) across different call centers or cities?
 
 
-🔗	Requirement Gathering: 
+# Requirement Gathering: 
 Dataset & Tools:
 The dataset used for this analysis consists of 12 columns and 32,941 rows, providing a comprehensive view of call center interactions, customer feedback, and service performance. 
 For this analysis, I utilized the following tools:
 •	SQL: To import, clean, and query the data. SQL was pivotal for transforming the data, checking for missing values, handling outliers, and calculating key metrics like average CSAT scores and call duration.
 •	Power BI: To visualize the results. I created a dashboard to help easily communicate insights, including slicers and various visualizations like bar charts, line graphs, and pie charts.
 
-🔗	Data Cleaning & Preprocessing:
+# Data Cleaning & Preprocessing:
 I started by importing the raw data and loading it into the database. Ensuring the data was correctly loaded allowed me to execute queries to assess the dataset.
 
 Data Cleaning:
@@ -49,7 +49,7 @@ I used the `WITH` clause to calculate the average CSAT score and updated the mis
 ![image](https://github.com/user-attachments/assets/fac35058-1237-4dc8-8a7e-defb8505c60c)
 
 
-🔗	Data Analysis
+# Data Analysis
 With clean data in hand, I moved on with the analysis.
 
 • How do customer satisfaction scores differ by call center, response time, or feedback type?
@@ -85,7 +85,7 @@ I examined the distribution of feedback types (e.g., Very Positive, Neutral, Neg
 ![image](https://github.com/user-attachments/assets/51b2aef4-e189-458b-af1d-2fdd2aef4de3)
 
 
-🔗 Visualization:
+# Visualization:
 
 To communicate the insights effectively, I created a Power BI dashboard with the following visualizations. The dashboard includes two slicers for dynamic filtering, allowing users to focus on specific cities, states, or feedback types.
 
@@ -95,21 +95,21 @@ To communicate the insights effectively, I created a Power BI dashboard with the
 4.	Bar chart : Customer Satisfaction by Call Center. Shows average CSAT scores for each call center, providing a clear view of performance.
 5.	Bar chart : Billing and Outage Issue by State. Displays the distribution of billing and service outage issues across different states.
 
-🔗	Insights:
+# Insights:
 After completing the analysis, I obtained the following key insights:
 1.	Customer Satisfaction by Call Center: Some call centers consistently achieved higher customer satisfaction scores than others.
 2.	Problematic Regions: Certain states and cities were found to have a significantly higher volume of billing issues and service outages, which could be areas of focus for service improvement.
 3.	Call Center vs. Chatbot Performance: The analysis revealed differences in both customer satisfaction and call duration between the call center and chatbot channels, offering valuable insights into where improvements can be made for each.
 4.	Call Center Performance: By examining CSAT scores and call durations, I identified which call centers are performing the best in terms of customer satisfaction and efficiency.
 5.	Feedback Distribution: I identified patterns in customer feedback across different call centers and cities, helping the business understand where to focus efforts for improvement.
-   
-🔗 Recommendation:
+
+# Recommendation:
 •	Improve Low-Performing Call Centers: Focus on the call centers with consistently lower customer satisfaction (CSAT) scores. Conduct root cause analyses to identify gaps in performance.
 •	Address Issues in Problematic Regions: Introduce localized support initiatives, such as dedicated teams or additional resources, to address specific regional challenges more efficiently.
 •	Enhance Chatbot Performance: Analyze the gaps in chatbot performance compared to call centers.
 •	Leverage Insights from Top-Performing Call Centers: Identify best practices from high-performing call centers with superior CSAT scores and efficiency. Standardize these practices across all centers.
 
 
-🔗 Challenges faced & lessons learned:
+# Challenges faced & lessons learned:
 • The data contained some missing values and inconsistencies, which required careful cleaning and handling to avoid skewing the results.
 • Determining the right approach for identifying and handling outliers was challenging, especially given that the dataset had a wide spread of values.
