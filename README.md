@@ -114,10 +114,15 @@ To communicate the insights effectively, I created a Power BI dashboard with the
 3.	Bar chart : Billing and Outage Issue by City . Compares the volume of billing and service outage issues across different cities.
 4.	Bar chart : Customer Satisfaction by Call Center. Shows average CSAT scores for each call center, providing a clear view of performance.
 5.	Bar chart : Billing and Outage Issue by State. Displays the distribution of billing and service outage issues across different states.
+
    
 
 ![image](https://github.com/user-attachments/assets/8f4df8fd-e052-4f34-a9c7-76bde81bdedf)
 
+
+**Visual Customization for Enhanced Clarity and Appeal:**
+
+I customized the background color of the visualizations to enhance their visibility and ensure consistency with the overall theme of the report. Key metrics, such as total calls within SLA, Average call duration , were displayed using cards to provide a quick overview. Data labels were included for better clarity, and legends helped differentiate between categories. Axis labels and titles were adjusted for easier interpretation, while text boxes offered additional guidance. To improve readability, a consistent color scheme was applied, and slicers were added for dynamic filtering.
 
 
 # Insights:
