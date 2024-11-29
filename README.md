@@ -60,6 +60,10 @@ I used the `WITH` clause to calculate the average CSAT score and updated the mis
 
 ![image](https://github.com/user-attachments/assets/fac35058-1237-4dc8-8a7e-defb8505c60c)
 
+After cleaning the data, I exported it into a new table to make it ready for visualization.
+
+![image](https://github.com/user-attachments/assets/7e0830df-463c-4a8f-9864-c405cbba40a8)
+
 
 # Data Analysis
 With clean data in hand, I moved on with the analysis.
