@@ -37,18 +37,20 @@ I started by importing the raw data and loading it into the database. Ensuring t
 Data Cleaning:
 • Column Names: I standardized column names, such as renaming the "call duration in minutes" column for clarity.
 
-![image](https://github.com/user-attachments/assets/2e7346e0-ad01-46aa-bc2b-0ca987500b35)
+![image](https://github.com/user-attachments/assets/d4738625-fc1b-471b-bec2-1a9aef40d32d)
+
 
 
 • Data Types: Using INFORMATION_SCHEMA_COLUMNS,  I reviewed the data types of each column and converted them where necessary.
 
  
-![image](https://github.com/user-attachments/assets/b83ecf51-e80d-474c-884c-0545fa9fc4ac)
+![image](https://github.com/user-attachments/assets/034cf262-9357-41a1-8410-86ae1e9f1266)
 
 
 • Missing Values: I examined the data for missing values. Notably, the csat_score column had 20,670 missing entries, which I decided to impute with the average score based on the feedback type. I used a WITH clause to calculate and update the missing values.
 
-![image](https://github.com/user-attachments/assets/d1da401a-1953-4dcd-ba13-af02331453eb)
+![image](https://github.com/user-attachments/assets/3fb42a0e-c9d5-4b2a-b09d-0ec45907596a)
+
 
 I used the `WITH` clause to calculate the average CSAT score and updated the missing CSAT values accordingly.
 
