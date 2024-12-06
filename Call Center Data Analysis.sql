@@ -251,8 +251,3 @@ SELECT call_center,
 FROM  call_center_data
 GROUP BY call_center
 ORDER BY  call_center ;
-
-
-
-
-
