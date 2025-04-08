@@ -147,4 +147,4 @@ After completing the analysis, I obtained the following key insights:
 
 • The data contained some missing values and inconsistencies, which required careful cleaning and handling to avoid skewing the results.
 
-• Determining the right approach for identifying and handling outliers was challenging, especially given that the dataset had a wide spread of values.
+• Determining the right approach for identifying and handling missing values was challenging.
